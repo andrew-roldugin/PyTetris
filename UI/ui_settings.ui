@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>816</width>
+    <height>259</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Настройки игры</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-radius: 15px;
+background-color: #0a182f;
+color: white;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QFrame" name="horizontalFrame">
+       <property name="styleSheet">
+        <string notr="true">background-color: #172a45;</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QCheckBox" name="checkBox">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;roboto&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Показывать тень от фигурки</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="tile_size_edit_frame">
+       <property name="styleSheet">
+        <string notr="true">background-color: #172a45;</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;roboto&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Размер ячейки</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="tile_size_lcd_slider">
+          <property name="minimum">
+           <number>5</number>
+          </property>
+          <property name="maximum">
+           <number>45</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="tile_size_lcd"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="col_edit_frame">
+       <property name="styleSheet">
+        <string notr="true">background-color: #172a45;</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;roboto&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Количество столбцов</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="cols_lineEdit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
+{
+    background-color: rgb(20, 50, 108);
+    padding: 5px;
+    border-style: solid;
+    border-radius: 10px;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="row_edit_frame">
+       <property name="styleSheet">
+        <string notr="true">background-color: #172a45;</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;roboto&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Количество строк</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="rows_lineEdit">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit
+{
+    background-color: rgb(20, 50, 108);
+    padding: 5px;
+    border-style: solid;
+    border-radius: 10px;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+   	font-size: 10pt;
+    background-color:  rgb(114, 57, 220);
+	padding: 5px;
+    border-radius: 10px;
+    outline: none;
+}</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tile_size_lcd_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>tile_size_lcd</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>431</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>770</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

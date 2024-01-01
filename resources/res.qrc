@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="static_img">
+    <file>tetrominoes.svg</file>
+  </qresource>
+</RCC>
